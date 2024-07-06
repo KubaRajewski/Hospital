@@ -1,0 +1,29 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="3" author="Brajan">
+        <createTable tableName="appointment">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" unique="true"/>
+            </column>
+            <column name="date" type="date" >
+                <constraints nullable="false"/>
+            </column>
+            <column name="version" type="int"/>
+            <column name="last_modified_by_id" type="varchar(255)"/>
+            <column name="created_by" type="varchar(255)"/>
+            <column name="created_date" type="date" >
+                <constraints nullable="false"/>
+            </column>
+            <column name="doctor_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="patient_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="status"  type="varchar(255)"/>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
